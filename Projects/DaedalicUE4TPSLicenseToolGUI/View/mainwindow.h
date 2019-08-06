@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+class MainController;
+
 namespace Ui {
 class MainWindow;
 }
@@ -12,11 +14,12 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(MainController* mainController, QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
+    MainController* _mainController;
+    Ui::MainWindow* _ui;
 };
 
 #endif // MAINWINDOW_H
