@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -33,6 +33,7 @@ SOURCES += \
 
 HEADERS += \
         Controller/maincontroller.h \
+        Model/tpsdata.h \
         View/mainwindow.h
 
 FORMS += \

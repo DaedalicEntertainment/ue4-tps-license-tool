@@ -24,10 +24,14 @@ public:
     explicit MainWindow(MainController* mainController, QWidget *parent = nullptr);
     ~MainWindow();
 
+    void init();
+
 private slots:
     void on_actionQuit_triggered();
 
     void on_actionAbout_triggered();
+
+    void on_pushButtonGenerateLicenseFile_clicked();
 
 private:
     MainController* _mainController;

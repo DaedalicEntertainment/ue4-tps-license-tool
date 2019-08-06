@@ -23,6 +23,13 @@ MainWindow::~MainWindow()
     delete _ui;
 }
 
+void MainWindow::init()
+{
+    _ui->lineEditUnrealEnginePath->setText(_mainController->enginePath());
+    _ui->lineEditTPSAuditOutputPath->setText(_mainController->tpsAuditOutputPath());
+    _ui->lineEditOutputFilePath->setText(_mainController->outputPath());
+}
+
 void MainWindow::on_actionQuit_triggered()
 {
     close();
@@ -43,4 +50,11 @@ void MainWindow::on_actionAbout_triggered()
     }
 
     showWindow(_aboutDialog);
+}
+
+void MainWindow::on_pushButtonGenerateLicenseFile_clicked()
+{
+    _mainController->generateLicenseFile(_ui->lineEditUnrealEnginePath->text(),
+                                         _ui->lineEditTPSAuditOutputPath->text(),
+                                         _ui->lineEditOutputFilePath->text());
 }

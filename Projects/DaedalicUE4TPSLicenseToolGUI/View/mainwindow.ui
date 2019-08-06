@@ -13,7 +13,55 @@
   <property name="windowTitle">
    <string/>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QFormLayout" name="formLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelUnrealEnginePath">
+          <property name="text">
+           <string>Unreal Engine Path:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="lineEditUnrealEnginePath"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="labelOutputFilePath">
+          <property name="text">
+           <string>Output File Path:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="lineEditOutputFilePath"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelTPSAuditOutputPath">
+          <property name="text">
+           <string>TPS Audit Output Path:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="lineEditTPSAuditOutputPath"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButtonGenerateLicenseFile">
+      <property name="text">
+       <string>Generate License File</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
