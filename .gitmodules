@@ -1,0 +1,3 @@
+[submodule "Projects/qt-daedalic"]
+	path = Projects/qt-daedalic
+	url = https://github.com/DaedalicEntertainment/qt-daedalic
