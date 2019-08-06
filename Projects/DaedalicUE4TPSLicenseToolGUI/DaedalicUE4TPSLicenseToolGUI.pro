@@ -24,6 +24,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += c++11
 
+RC_ICONS = ../../Media/Daedalic.ico
+
 SOURCES += \
         Controller/maincontroller.cpp \
         main.cpp \
@@ -40,3 +42,10 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../qt-daedalic/Source/Qt5Daedalic/release/ -lQt5Daedalic
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../qt-daedalic/Source/Qt5Daedalic/debug/ -lQt5Daedalic
+else:unix: LIBS += -L$$OUT_PWD/../qt-daedalic/Source/Qt5Daedalic/ -lQt5Daedalic
+
+INCLUDEPATH += $$PWD/../qt-daedalic/Source/Qt5Daedalic
+DEPENDPATH += $$PWD/../qt-daedalic/Source/Qt5Daedalic

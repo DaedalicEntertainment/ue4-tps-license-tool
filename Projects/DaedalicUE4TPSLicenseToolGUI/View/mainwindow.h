@@ -3,13 +3,20 @@
 
 #include <QMainWindow>
 
+#include "MainWindow/daedalicmainwindow.h"
+
+namespace Daedalic
+{
+    class AboutDialog;
+}
+
 class MainController;
 
 namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
+class MainWindow : public Daedalic::DaedalicMainWindow
 {
     Q_OBJECT
 
@@ -17,9 +24,16 @@ public:
     explicit MainWindow(MainController* mainController, QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_actionQuit_triggered();
+
+    void on_actionAbout_triggered();
+
 private:
     MainController* _mainController;
     Ui::MainWindow* _ui;
+    QSharedPointer<Daedalic::AboutDialog> _aboutDialog;
+
 };
 
 #endif // MAINWINDOW_H
